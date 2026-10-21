@@ -1,0 +1,170 @@
+diff --git a/BSP/bsp_iic.h b/BSP/bsp_iic.h
+--- a/BSP/bsp_iic.h
++++ b/BSP/bsp_iic.h
+@@ -29,6 +29,7 @@
+ HAL_StatusTypeDef BSP_I2C2_INIT(void);
+ HAL_StatusTypeDef BSP_IIC_WriteReg(IICId_t id, uint16_t addr, uint8_t reg, uint8_t val);
+ HAL_StatusTypeDef BSP_IIC_ReadReg(IICId_t id, uint16_t addr, uint8_t reg, uint8_t *pval);
++HAL_StatusTypeDef BSP_IIC_ReadRegs(IICId_t id, uint16_t addr, uint8_t reg, uint8_t *data, uint8_t len);
+ HAL_StatusTypeDef BSP_IIC_WriteRegs(IICId_t id, uint16_t addr, uint8_t reg, uint8_t *data, uint8_t len);
+ HAL_StatusTypeDef BSP_IIC_Read(IICId_t id, uint16_t addr, uint8_t *data, uint16_t len);
+ HAL_StatusTypeDef BSP_IIC_Write(IICId_t id, uint16_t addr, uint8_t *data, uint16_t len);
+diff --git a/BSP/bsp_iic.c b/BSP/bsp_iic.c
+--- a/BSP/bsp_iic.c
++++ b/BSP/bsp_iic.c
+@@ -98,6 +98,13 @@
+                               BSP_I2C_TIMEOUT);
+ }
+ 
++HAL_StatusTypeDef BSP_IIC_ReadRegs(IICId_t id, uint16_t addr, uint8_t reg, uint8_t *data, uint8_t len)
++{
++    return HAL_I2C_Mem_Read(s_iic_config[id].handle, addr << 1U, reg,
++                            I2C_MEMADD_SIZE_8BIT, data, len,
++                            BSP_I2C_TIMEOUT);
++}
++
+ HAL_StatusTypeDef BSP_IIC_WriteRegs(IICId_t id, uint16_t addr, uint8_t reg, uint8_t *data, uint8_t len)
+ {
+ 	return HAL_I2C_Mem_Write(s_iic_config[id].handle, addr << 1U, reg,
+diff --git a/BSP/bsp_gpio.c b/BSP/bsp_gpio.c
+--- a/BSP/bsp_gpio.c
++++ b/BSP/bsp_gpio.c
+@@ -24,7 +24,7 @@
+   GPIO_InitTypeDef  GPIOA_InitStruct = {0};
+ 	
+   GPIOA_InitStruct.Pin = gpiosconfig[gpioa].pin;
+-  GPIOA_InitStruct.Mode = GPIO_MODE_IT_FALLING;            
++  GPIOA_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;            
+   GPIOA_InitStruct.Pull = GPIO_PULLUP;                    /* Enable pull-up */
+   GPIOA_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;          /* GPIO speed */
+   /* GPIO initialization */
+@@ -47,7 +47,7 @@
+   GPIO_InitTypeDef  GPIOB_InitStruct = {0};
+ 
+   GPIOB_InitStruct.Pin = gpiosconfig[gpiob].pin;
+-  GPIOB_InitStruct.Mode = GPIO_MODE_IT_FALLING;            
++  GPIOB_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;            
+   GPIOB_InitStruct.Pull = GPIO_PULLUP;                    /* Enable pull-up */
+   GPIOB_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;          /* GPIO speed */
+   /* GPIO initialization */
+diff --git a/Driver/mpu_6050.c b/Driver/mpu_6050.c
+--- a/Driver/mpu_6050.c
++++ b/Driver/mpu_6050.c
+@@ -84,7 +84,7 @@
+     uint8_t len,
+     uint8_t *buf)
+ {
+-    return (BSP_IIC_WriteRegs(
++    return (BSP_IIC_ReadRegs(
+                 MPU_IIC_ID,
+                 addr,
+                 reg,
+diff --git a/core/Src/main.c b/core/Src/main.c
+--- a/core/Src/main.c
++++ b/core/Src/main.c
+@@ -32,6 +32,10 @@
+ #include "main.h"
+ #include "FreeRTOS.h"
+ #include "task.h"
++#include "bsp_init.h"
++#include "service_main.h"
++#include "service_mpu_6050.h"
++#include "app_main.h"
+ 
+ /* Private define ------------------------------------------------------------*/
+ /* Private variables ---------------------------------------------------------*/
+@@ -55,16 +59,28 @@
+   /* System clock configuration */
+   APP_SystemClockConfig();
+ 
++  if (bsp_init() != 0U)
++  {
++    APP_ErrorHandler();
++  }
++  ServiceMain_Init();
++  AppMain_Init();
++
+   /* Initialize UART */
+ //  BSP_USART_Config();
+ 
+   /* Create the tasks that are created using the original xTaskCreate() API function. */
+-  xTaskCreate( Task1, "Task1", 128, NULL, 1, NULL );
+-  xTaskCreate( Task2, "Task2", 128, NULL, 2, NULL );
+-  xTaskCreate( Task3, "Task3", 128, NULL, 3, NULL );
++  if ((xTaskCreate(Task1, "Task1", 256, NULL, 1, NULL) != pdPASS) ||
++      (xTaskCreate(Task2, "Task2", 192, NULL, 2, NULL) != pdPASS) ||
++      (xTaskCreate(Task3, "Task3", 192, NULL, 3, NULL) != pdPASS))
++  {
++    APP_ErrorHandler();
++  }
+ 
+   /* Start the scheduler. */
+   vTaskStartScheduler();
++  APP_ErrorHandler();
++  return 0;
+ }
+ 
+ /**
+@@ -74,8 +90,20 @@
+   */
+ static void Task1(void *pvParamters)
+ {
+-  while (1)
+-  {
++  TickType_t last_wake = xTaskGetTickCount();
++  uint32_t last_process_ms = HAL_GetTick();
++  (void)pvParamters;
++
++  while (1)
++  {
++    uint32_t now_ms = HAL_GetTick();
++    AppMain_Process(now_ms - last_process_ms);
++    last_process_ms = now_ms;
++    if ((TickType_t)(xTaskGetTickCount() - last_wake) >= pdMS_TO_TICKS(10U))
++    {
++      last_wake = xTaskGetTickCount();
++    }
++    vTaskDelayUntil(&last_wake, pdMS_TO_TICKS(10U));
+   }
+ }
+ 
+@@ -86,8 +114,17 @@
+   */
+ static void Task2(void *pvParamters)
+ {
+-  while(1)
+-  {
++  TickType_t last_wake = xTaskGetTickCount();
++  (void)pvParamters;
++
++  while (1)
++  {
++    ServiceMain_Process();
++    if ((TickType_t)(xTaskGetTickCount() - last_wake) >= pdMS_TO_TICKS(5U))
++    {
++      last_wake = xTaskGetTickCount();
++    }
++    vTaskDelayUntil(&last_wake, pdMS_TO_TICKS(5U));
+   }
+ }
+ 
+@@ -98,8 +135,17 @@
+   */
+ static void Task3(void *pvParamters)
+ {
+-  while(1)
+-  {
++  TickType_t last_wake = xTaskGetTickCount();
++  (void)pvParamters;
++
++  while (1)
++  {
++    SensorService_Process();
++    if ((TickType_t)(xTaskGetTickCount() - last_wake) >= pdMS_TO_TICKS(20U))
++    {
++      last_wake = xTaskGetTickCount();
++    }
++    vTaskDelayUntil(&last_wake, pdMS_TO_TICKS(20U));
+   }
+ }
+ 

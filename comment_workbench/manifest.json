@@ -1,0 +1,263 @@
+{
+  "files": [
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_config.h",
+      "workbench_path": "comment_workbench/boot/boot_config.h",
+      "file_type": ".h",
+      "sha256": "8e876b4805b0a64e9408901be69a22067596e961672262e6be9fef7e25cf2b34"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_select.h",
+      "workbench_path": "comment_workbench/boot/boot_select.h",
+      "file_type": ".h",
+      "sha256": "d7937f1f2e71fb8e29305d22d1abf015cbd08fad1cf95fffe63de2c9c34547fc"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_select.c",
+      "workbench_path": "comment_workbench/boot/boot_select.c",
+      "file_type": ".c",
+      "sha256": "56d318acd94a1f0db1cee81cd729f63de0c80776e516849c5b1c1e1eebaaf358"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_metadata.h",
+      "workbench_path": "comment_workbench/boot/boot_metadata.h",
+      "file_type": ".h",
+      "sha256": "8a5cc6544ae6329d9da798acfe308a565bb84eed84fa70e10ce8ffbed68a044f"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_metadata.c",
+      "workbench_path": "comment_workbench/boot/boot_metadata.c",
+      "file_type": ".c",
+      "sha256": "7d5769d59ec5b728e9a6702672b8d4dda1980263cdd90a2ab390ba77b23b2aa1"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_crc.h",
+      "workbench_path": "comment_workbench/boot/boot_crc.h",
+      "file_type": ".h",
+      "sha256": "5d165ea703c99a92576bc635550b78bb47148c6e60314a9921d4e5cf78bc8a62"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_crc.c",
+      "workbench_path": "comment_workbench/boot/boot_crc.c",
+      "file_type": ".c",
+      "sha256": "e4328899bd0d7c5b206b442316fa5e0b84df669d201ab5b4e74bc9071d560cd8"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_flash.h",
+      "workbench_path": "comment_workbench/boot/boot_flash.h",
+      "file_type": ".h",
+      "sha256": "889198dd9e8cc4983207f01730edd5e6a387ecb5f9a60980cfb9b8a445cc9b4c"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_flash.c",
+      "workbench_path": "comment_workbench/boot/boot_flash.c",
+      "file_type": ".c",
+      "sha256": "e267aaf4653c62646d218157635173f9af9f58cee93d7bf402fb26d82bf04503"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_jump.h",
+      "workbench_path": "comment_workbench/boot/boot_jump.h",
+      "file_type": ".h",
+      "sha256": "20013610bf5a20b3637f65fa900cf45be183e3f3e766711adbc9c8801c90be32"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_jump.c",
+      "workbench_path": "comment_workbench/boot/boot_jump.c",
+      "file_type": ".c",
+      "sha256": "7417aba9424a9239f608912f3c1a3bbd405d6bca5b31898c1851425acdc04282"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/app_update.h",
+      "workbench_path": "comment_workbench/boot/app_update.h",
+      "file_type": ".h",
+      "sha256": "662166a554075964196ff627df62c5d0bf5f9239efc22133d3c7eeed691a03a0"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/app_update.c",
+      "workbench_path": "comment_workbench/boot/app_update.c",
+      "file_type": ".c",
+      "sha256": "c98c3927a5e044c85ae9e8d8a5b9504612a25dab08e76d0fd5ab7437e30f4dc5"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_mian.c",
+      "workbench_path": "comment_workbench/boot/boot_mian.c",
+      "file_type": ".c",
+      "sha256": "f90987c123893a3aaf678a99c3d27fa190865dfed5ff464b1887923e7ee0355f"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_it.c",
+      "workbench_path": "comment_workbench/boot/boot_it.c",
+      "file_type": ".c",
+      "sha256": "7b52d1d381c4c04b5d1a3eb2c6a5819ef4d508fb01cfaf4b0dced7fe0b1a9537"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_protocol.h",
+      "workbench_path": "comment_workbench/boot/boot_protocol.h",
+      "file_type": ".h",
+      "sha256": "4d7268459264bcf1d9987137e506f15e29cfe7c71ac6a951eaf5b3e58705cccf"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/boot/boot_protocol.c",
+      "workbench_path": "comment_workbench/boot/boot_protocol.c",
+      "file_type": ".c",
+      "sha256": "ff2b89d9956de6721977d3ea171c99c4cd15be038cac71741d02ca3b85c3f427"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/ota_protocol.h",
+      "workbench_path": "comment_workbench/Service/ota_protocol.h",
+      "file_type": ".h",
+      "sha256": "89aa4b426ffd86706989348785b4ae93ba0ff7deb7ee06f012051860f19913bf"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/ota_protocol.c",
+      "workbench_path": "comment_workbench/Service/ota_protocol.c",
+      "file_type": ".c",
+      "sha256": "b14a5015937c437353a1b464183bfc258dad8127fefc4291d8c890e3ef4ea0b7"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/ota_receiver.h",
+      "workbench_path": "comment_workbench/Service/ota_receiver.h",
+      "file_type": ".h",
+      "sha256": "f38661451dbf32c9c57eaeb35c170ebfef84c753971fe9335da9906497d20164"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/ota_receiver.c",
+      "workbench_path": "comment_workbench/Service/ota_receiver.c",
+      "file_type": ".c",
+      "sha256": "f4580fe82d39055473ac18c20a2cda00fe8b18b32ea8a80e7dcbfaa296f8558c"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Driver/ota_uart.h",
+      "workbench_path": "comment_workbench/Driver/ota_uart.h",
+      "file_type": ".h",
+      "sha256": "0e3b54327b5890685de3149dc04b087a9f63e239ece8405841e1c0044bbe02df"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Driver/ota_uart.c",
+      "workbench_path": "comment_workbench/Driver/ota_uart.c",
+      "file_type": ".c",
+      "sha256": "191e4a900cf950b49c77919f5a580aec48a11fd10047e2325a7d7d956bc98b11"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_usart.h",
+      "workbench_path": "comment_workbench/BSP/bsp_usart.h",
+      "file_type": ".h",
+      "sha256": "46bcffbbe5a1f1fdb1626012812bd860fa8d859c4d8806a9770a706c72de5705"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_usart.c",
+      "workbench_path": "comment_workbench/BSP/bsp_usart.c",
+      "file_type": ".c",
+      "sha256": "2af5b5738a9ab9dfd5981dbeff75216156314ee1ff64ecc2d85f3a339c1a356f"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_init.h",
+      "workbench_path": "comment_workbench/BSP/bsp_init.h",
+      "file_type": ".h",
+      "sha256": "4587cd87aeec519f32302d660e9665e7a0b5f5de1ba079f13b096172a682fb66"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_init.c",
+      "workbench_path": "comment_workbench/BSP/bsp_init.c",
+      "file_type": ".c",
+      "sha256": "dfa5e5b4e532f1fc4622b5bf25e6cf74a1afff5e208f93ac91599f04e97f34ad"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_gpio.h",
+      "workbench_path": "comment_workbench/BSP/bsp_gpio.h",
+      "file_type": ".h",
+      "sha256": "2135d4aba681c3f20edb55a424af7064880f5d06cf41731a6c1a488dfafb178c"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_gpio.c",
+      "workbench_path": "comment_workbench/BSP/bsp_gpio.c",
+      "file_type": ".c",
+      "sha256": "7fede0b64e19b7eab0f0dbadfede7f089cbf662ba80691cb98bc40f80efc3bf8"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/BSP/bsp_iic.h",
+      "workbench_path": "comment_workbench/BSP/bsp_iic.h",
+      "file_type": ".h",
+      "sha256": "bbea2a9190ddf739d8a46096acb06f06ee444c310801d773bbb405e3f91ea7b8"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Driver/ble.h",
+      "workbench_path": "comment_workbench/Driver/ble.h",
+      "file_type": ".h",
+      "sha256": "2260e60f4c0905ba93686cf05b0870f3a92b66b06bcddcba1e3c3574fe1ed789"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Driver/ble.c",
+      "workbench_path": "comment_workbench/Driver/ble.c",
+      "file_type": ".c",
+      "sha256": "893834451dc4629903d10cbbf8b1583328993729372c58517343aac3b2d6b22a"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/app_settings.h",
+      "workbench_path": "comment_workbench/App/app_settings.h",
+      "file_type": ".h",
+      "sha256": "d73ff92f0a404ebb589d3335a6ca5ab095ec916a3a4c2345c0ec8879f200ca9b"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/app_settings.c",
+      "workbench_path": "comment_workbench/App/app_settings.c",
+      "file_type": ".c",
+      "sha256": "ddecc8585f65282d6cc313bdb5e2b5bcf3c4a21d9c7c58b41abaff03999f7711"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/app_main.h",
+      "workbench_path": "comment_workbench/App/app_main.h",
+      "file_type": ".h",
+      "sha256": "ed78e8353a528a98eec258c67307e4e77f396c0eca85435268d460a50c533080"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/app_main.c",
+      "workbench_path": "comment_workbench/App/app_main.c",
+      "file_type": ".c",
+      "sha256": "cad3e440988fc542431f47642dc256d0f891812c13fda965560da83cfe3390e9"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/game_id.h",
+      "workbench_path": "comment_workbench/App/game_id.h",
+      "file_type": ".h",
+      "sha256": "30aa40f7add29effe2656d6e62323b8e3f4d4f4cf170587340576303aacb2c37"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/App/game_manager.h",
+      "workbench_path": "comment_workbench/App/game_manager.h",
+      "file_type": ".h",
+      "sha256": "9dad0ad2fc1f829e78207c3a24f54c5c02020ea985e6bc4d0ce685b2972effab"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/service_enmu.h",
+      "workbench_path": "comment_workbench/Service/service_enmu.h",
+      "file_type": ".h",
+      "sha256": "9c781baf4757b3ea7e86012d1afef084cc8ed04e5c3bd36168412ca04e29d39f"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/service_display.h",
+      "workbench_path": "comment_workbench/Service/service_display.h",
+      "file_type": ".h",
+      "sha256": "6f7a0276909570a8aa9d42bae4c904ecc128e773a23fab212d846a72a04dd3a3"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/Service/service_main.h",
+      "workbench_path": "comment_workbench/Service/service_main.h",
+      "file_type": ".h",
+      "sha256": "0e48802262c4888e67767ce6f2383757cabd968e8bddc714a2f0f5cb57532c5e"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/core/Inc/main.h",
+      "workbench_path": "comment_workbench/core/Inc/main.h",
+      "file_type": ".h",
+      "sha256": "d24830fd21692c96f751cba8cf593fe8b56c2b4b1ac60430fcf9c9eaac80d6ee"
+    },
+    {
+      "original_path": "D:/PY32/yxj/py_rtos_pro/core/Src/main.c",
+      "workbench_path": "comment_workbench/core/Src/main.c",
+      "file_type": ".c",
+      "sha256": "53c0a7e8027f993604474cb34a200360a9786752116958dd98a1f408c2bfe157"
+    }
+  ],
+  "sha256_match": true
+}

@@ -1,0 +1,33 @@
+# Python caches, test/build outputs
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.pdb
+*.ilk
+*.obj
+*.o
+*.d
+build/
+Tests/out/
+
+# Keil/ARMCC generated artifacts and per-user workspace state
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+MDK-ARM/*.uvoptx
+MDK-ARM/*.uvguix*
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+
+# Packaged desktop application output; source and build recipe stay tracked
+shangweiji/dist/
+shangweiji/build/
+
+# Local editor/OS files
+.vscode/
+.idea/
+*.user
+Thumbs.db
+Desktop.ini
